@@ -2,7 +2,6 @@ import os
 import cv2 as cv
 import glob
 import re
-from numpy import array
 from stereovision.calibration import StereoCalibrator
 from stereovision.calibration import StereoCalibration
 from stereovision.exceptions import ChessboardNotFoundError
@@ -17,7 +16,7 @@ def crop_image(img_orig, img_left=None, img_right=None):
   height = int(img.shape[0])
   cv.imwrite(img_left, img[0:height, 0:int(width / 2)])
   cv.imwrite(img_right, img[0:height, int(width / 2):width])
-  return list(img_left, img_right)
+  return [img_left, img_right]
 
 def stereo_calibrate():
   # Global variables preset
@@ -78,9 +77,12 @@ def stereo_calibrate():
 
 def image_rectify(img_orig=None, img_left=None, img_right=None):
   if img_orig != None:
+    print("Rectifying images "+img_orig+"...")
     names = crop_image(img_orig)
     img_left = names[0]
     img_right = names[1]
+  else:
+    print("Rectifying image pair "+img_left+", "+img_right+"...")
   calibration = StereoCalibration(input_folder='calib_result')
   targetLeft = cv.imread(img_left)
   targetRight = cv.imread(img_right)

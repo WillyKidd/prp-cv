@@ -2,14 +2,14 @@
 
 import os
 
-def rename():
+def rename_files():
   os.chdir('./img_original')
 
   for i, file in enumerate(os.listdir()):
     os.rename(file, str(i)+'.jpg')
 
 def main():
-  rename()
+  rename_files()
 
 if __name__ == '__main__':
   main()
