@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# project specific folders
+.vscode/
+img_original/
+imgL/
+imgR/
+calib_result/
+*.jpg
