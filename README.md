@@ -23,4 +23,6 @@ Our next steps include:
 Part of the code for camera calibration is contributed by ve450 group 2, summer 2021.
 
 ## Tools & references:
-- https://yangcha.github.io/iview/iview.html
+- [Obtain pixel coordinates of a particular point](https://yangcha.github.io/iview/iview.html)
+- [Stereovision package documentation](https://erget.wordpress.com/2014/02/28/calibrating-a-stereo-pair-with-python/)
+- [Camera matrix](http://www.cs.cmu.edu/~16385/s17/Slides/11.1_Camera_matrix.pdf)
